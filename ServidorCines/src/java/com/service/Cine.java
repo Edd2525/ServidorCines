@@ -9,6 +9,7 @@ package com.service;
  *
  * @author PC
  */
+//nepe
 public class Cine {
     private String nombre;
     private int precio;
