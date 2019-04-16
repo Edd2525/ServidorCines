@@ -52,6 +52,15 @@ public class Service {
     @WebMethod(operationName = "login")
     public boolean login(@WebParam(name = "usuario") String usuario, @WebParam(name = "clave") String clave) {
         //TODO write your implementation code here:
-        return false;
+        return cliente.login(usuario, clave);
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "cantidadNPeli")
+    public int cantidadNPeli() {
+        //TODO write your implementation code here:
+        return 0;
     }
 }
