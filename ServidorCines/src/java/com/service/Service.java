@@ -36,4 +36,13 @@ public class Service {
         //TODO write your implementation code here:
         return cliente.nuevoUsuario(nombre, id, usuario, clave);
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "operation")
+    public boolean operation(@WebParam(name = "nombre") String nombre, @WebParam(name = "precio") int precio, @WebParam(name = "hora") String hora, @WebParam(name = "tipo") String tipo, @WebParam(name = "imagen") String imagen) {
+        //TODO write your implementation code here:
+        return false;
+    }
 }
