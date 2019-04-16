@@ -19,7 +19,7 @@ public class ServiciosCliente {
     }
 
     public boolean nuevoUsuario(String nombre, int id, String usuario, String clave) {
-        if (repetido(nombre, id)) {
+        if (repetido(nombre, id, usuario)) {
             //String nombre, int id, String usuario, String clave
             Cliente cliente = new Cliente(nombre, id, usuario, clave);
             this.clientes.add(cliente);
@@ -28,13 +28,24 @@ public class ServiciosCliente {
         return false;
     }
 
-    public boolean repetido(String nombre, int id) {
+    public boolean repetido(String nombre, int id, String usuario) {
         int total = this.clientes.size();
         for (int i = 0; i < total; i++) {
+            if(clientes.get(i).getUsuario().equals(usuario))
+                return false;
             if (clientes.get(i).getNombre().equals(nombre) && clientes.get(i).getId() == id) {
                 return false;
             }
         }
         return true;
+    }
+    
+    public boolean login(String usuario, String clave){
+        int total = this.clientes.size();
+        for (int i = 0; i < total; i++) {
+            if(clientes.get(i).getUsuario().equals(usuario) && clientes.get(i).getClave().equals(clave))
+                return true;
+        }
+        return false;
     }
 }

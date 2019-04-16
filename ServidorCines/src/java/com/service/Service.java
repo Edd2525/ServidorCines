@@ -40,8 +40,17 @@ public class Service {
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "operation")
+    @WebMethod(operationName = "nuevaPeli")
     public boolean operation(@WebParam(name = "nombre") String nombre, @WebParam(name = "precio") int precio, @WebParam(name = "hora") String hora, @WebParam(name = "tipo") String tipo, @WebParam(name = "imagen") String imagen) {
+        //TODO write your implementation code here:
+        return false;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "login")
+    public boolean login(@WebParam(name = "usuario") String usuario, @WebParam(name = "clave") String clave) {
         //TODO write your implementation code here:
         return false;
     }
