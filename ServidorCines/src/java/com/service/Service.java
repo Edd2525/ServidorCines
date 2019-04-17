@@ -37,14 +37,7 @@ public class Service {
         return cliente.nuevoUsuario(nombre, id, usuario, clave);
     }
 
-    /**
-     * Web service operation
-     */
-    @WebMethod(operationName = "nuevaPeli")
-    public boolean operation(@WebParam(name = "nombre") String nombre, @WebParam(name = "precio") int precio, @WebParam(name = "hora") String hora, @WebParam(name = "tipo") String tipo, @WebParam(name = "imagen") String imagen) {
-        //TODO write your implementation code here:
-        return false;
-    }
+    
 
     /**
      * Web service operation
@@ -58,9 +51,20 @@ public class Service {
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "cantidadNPeli")
-    public int cantidadNPeli() {
+    @WebMethod(operationName = "listaPeli")
+    public String listaPeli() {
         //TODO write your implementation code here:
-        return 0;
+        return cine.listaPeli();
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "nuevaPeli")
+    public String nuevaPeli(@WebParam(name = "nombre") String nombre, @WebParam(name = "precio") int precio, @WebParam(name = "hora") String hora, @WebParam(name = "tipo") String tipo, @WebParam(name = "imagen") String imagen) {
+        //TODO write your implementation code here:
+        return cine.nuevaPeli(nombre, precio, hora, tipo, imagen);
+    }
+
+    
 }

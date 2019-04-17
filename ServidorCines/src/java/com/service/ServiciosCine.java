@@ -12,39 +12,63 @@ import java.util.ArrayList;
  * @author PC
  */
 public class ServiciosCine {
+
     ArrayList<String> nombrePeli = new ArrayList();
     ArrayList<Cine> cines = new ArrayList();
+
     public ServiciosCine() {
     }
-    
-    public void repetido(String nombre){
-        int total=this.nombrePeli.size();
+
+    public void repetido(String nombre) {
+        int total = this.nombrePeli.size();
+        int cont = 0;
         for (int i = 0; i < total; i++) {
-            if(nombrePeli.get(i).equals(nombre))
-                System.out.println("Ya existe");
-            else
-                nombrePeli.add(nombre);
+            if (nombrePeli.get(i).equals(nombre)) 
+                cont++;
         }
+        if(cont==0)
+            nombrePeli.add(nombre);
     }
-    
+
     //String nombre, int precio, String hora, int[][] campos, String tipo, String imagen
-    public void nuevaPeli(String nombre, int precio, String hora, String tipo, String imagen){
-        Cine peli = new Cine(nombre,precio,hora,tipo,imagen);
+    public String nuevaPeli(String nombre, int precio, String hora, String tipo, String imagen) {
+        Cine peli = new Cine(nombre, precio, hora, tipo, imagen);
         peli.resetearCampos();
         cines.add(peli);
         repetido(nombre);
+        return "bien";
     }
-    
-    public String buscarPeli(String nombre){
-        int total=this.cines.size();
-        String msg="";
+
+    public String buscarPeli(String nombre) {
+        int total = this.cines.size();
+        String msg = "";
         for (int i = 0; i < total; i++) {
-            if(cines.get(i).getNombre().equals(nombre))
-                msg = msg+i+" ";
+            if (cines.get(i).getNombre().equals(nombre)) {
+                msg = msg + i + "&";
+            }
         }
-        msg = msg+" ";
+        //msg = msg;
         return msg;
     }
-    
-    
+
+    public String listaPeli() {
+        String msg = "";
+        int total = this.nombrePeli.size();
+        for (int i = 0; i < total; i++) {
+            msg = msg + nombrePeli.get(i) + "&";
+        }
+        //msg = msg+"&";
+        return msg;
+    }
+
+    public String peliGuardadas() {
+        int total = this.cines.size();
+        String msg = "";
+        for (int i = 0; i < total; i++) {
+            msg = msg + cines.get(i).getNombre() + "&";
+        }
+        //msg = msg+"&";
+        return msg;
+    }
+
 }
