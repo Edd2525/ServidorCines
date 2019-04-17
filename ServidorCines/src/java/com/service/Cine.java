@@ -17,8 +17,8 @@ public class Cine {
     private int[][] campos;//6*4
     private String tipo;
     private String imagen;
-    private final int x=6;
-    private final int y=4;
+    private final int x=5;
+    private final int y=10;
 
     public Cine() {
     }
@@ -38,6 +38,7 @@ public class Cine {
                 this.campos[i][j]=0;
             }
         }
+        this.campos[0][0]=1;
     }
     public String mostrarCampos(){
         String msg="";
@@ -74,12 +75,12 @@ public class Cine {
         this.hora = hora;
     }
 
-    public int[][] getCampos() {
-        return campos;
+    public int getCampos(int x, int y) {
+        return campos[x][y];
     }
 
-    public void setCampos(int[][] campos) {
-        this.campos = campos;
+    public void setCampos(int x, int y) {
+        this.campos[x][y] = 1;
     }
 
     public String getTipo() {

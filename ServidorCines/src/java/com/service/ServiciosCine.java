@@ -78,5 +78,17 @@ public class ServiciosCine {
     public String getImagen(int x){
         return this.cines.get(x).getImagen();
     }
+    
+    public boolean consultaCampo(int x, int i, int j){
+        if(this.cines.get(x).getCampos(i, j)==0)
+            return true;
+        else
+            return false;
+    }
+    
+    public boolean asignarCampo(int x, int i, int j){
+        this.cines.get(x).setCampos(i, j);
+        return true;
+    }
 
 }

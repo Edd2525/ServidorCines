@@ -119,6 +119,26 @@ public class Service {
         //TODO write your implementation code here:
         return cine.getImagen(x);
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "consultaCampo")
+    public boolean consultaCampo(@WebParam(name = "x") int x, @WebParam(name = "i") int i, @WebParam(name = "j") int j) {
+        //TODO write your implementation code here:
+        return cine.consultaCampo(x, i, j);
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "asignarCampo")
+    public boolean asignarCampo(@WebParam(name = "x") int x, @WebParam(name = "i") int i, @WebParam(name = "j") int j) {
+        //TODO write your implementation code here:
+        return cine.asignarCampo(x, i, j);
+    }
+
+    
     
     
 
