@@ -47,7 +47,6 @@ public class ServiciosCine {
                 msg = msg + i + "&";
             }
         }
-        //msg = msg;
         return msg;
     }
 
@@ -57,18 +56,27 @@ public class ServiciosCine {
         for (int i = 0; i < total; i++) {
             msg = msg + nombrePeli.get(i) + "&";
         }
-        //msg = msg+"&";
         return msg;
     }
-
-    public String peliGuardadas() {
-        int total = this.cines.size();
-        String msg = "";
-        for (int i = 0; i < total; i++) {
-            msg = msg + cines.get(i).getNombre() + "&";
-        }
-        //msg = msg+"&";
-        return msg;
+    
+    public String getNombre(int x){
+        return this.cines.get(x).getNombre();
+    }
+    
+    public int getPrecio(int x){
+        return this.cines.get(x).getPrecio();
+    }
+    
+    public String getHora(int x){
+        return this.cines.get(x).getHora();
+    }
+    
+    public String getTipo(int x){
+        return this.cines.get(x).getTipo();
+    }
+    
+    public String getImagen(int x){
+        return this.cines.get(x).getImagen();
     }
 
 }

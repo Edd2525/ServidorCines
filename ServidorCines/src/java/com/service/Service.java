@@ -66,5 +66,61 @@ public class Service {
         return cine.nuevaPeli(nombre, precio, hora, tipo, imagen);
     }
 
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "buscarPeli")
+    public String buscarPeli(@WebParam(name = "nombre") String nombre) {
+        //TODO write your implementation code here:
+        return cine.buscarPeli(nombre);
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getNombre")
+    public String getNombre(@WebParam(name = "x") int x) {
+        //TODO write your implementation code here:
+        return cine.getNombre(x);
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getPrecio")
+    public int getPrecio(@WebParam(name = "x") int x) {
+        //TODO write your implementation code here:
+        return cine.getPrecio(x);
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getHora")
+    public String getHora(@WebParam(name = "x") int x) {
+        //TODO write your implementation code here:
+        return cine.getHora(x);
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getTipo")
+    public String getTipo(@WebParam(name = "x") int x) {
+        //TODO write your implementation code here:
+        return cine.getTipo(x);
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getImagen")
+    public String getImagen(@WebParam(name = "x") int x) {
+        //TODO write your implementation code here:
+        return cine.getImagen(x);
+    }
+    
+    
+
     
 }
