@@ -38,7 +38,6 @@ public class Cine {
                 this.campos[i][j]=0;
             }
         }
-        this.campos[0][0]=1;
     }
     public String mostrarCampos(){
         String msg="";
@@ -81,6 +80,10 @@ public class Cine {
 
     public void setCampos(int x, int y) {
         this.campos[x][y] = 1;
+    }
+    
+    public void resetCampos(int x, int y) {
+        this.campos[x][y] = 0;
     }
 
     public String getTipo() {

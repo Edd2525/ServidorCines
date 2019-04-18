@@ -138,6 +138,15 @@ public class Service {
         return cine.asignarCampo(x, i, j);
     }
 
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "resetearCampo")
+    public boolean resetearCampo(@WebParam(name = "x") int x, @WebParam(name = "i") int i, @WebParam(name = "j") int j) {
+        //TODO write your implementation code here:
+        return cine.resetearCampo(x, i, j);
+    }
+
     
     
     

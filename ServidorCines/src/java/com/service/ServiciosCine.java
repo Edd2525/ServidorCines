@@ -91,4 +91,8 @@ public class ServiciosCine {
         return true;
     }
 
+    public boolean resetearCampo(int x, int i, int j){
+        this.cines.get(x).resetCampos(i, j);
+        return true;
+    }
 }
